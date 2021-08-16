@@ -1,15 +1,9 @@
-const Currency = (props) => {
+const Currency = ({ name, buyingPrice, sellingPrice }) => {
     return (
         <tr>
-            <th>
-                {props.name}
-            </th>
-            <th>
-                {props.buyingPrice}
-            </th>
-            <th>
-                {props.sellingPrice}
-            </th>
+            <th>{name}</th>
+            <th>{buyingPrice}</th>
+            <th>{sellingPrice}</th>
         </tr>
     );
 }
