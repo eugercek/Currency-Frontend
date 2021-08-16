@@ -1,22 +1,26 @@
 import Currency from "./Currency";
+import { Table, TableContainer, TableHead,  TableCell, TableBody} from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
 
-const CurrencyTable = ({currencies}) => {
+const CurrencyTable = ({ currencies }) => {
     // TODO Look at HTML 5 Table API
     return (
-        <table>
-            <thead>
-                <th>ISO Name</th>
-                <th>Buying Price</th>
-                <th>Selling Price</th>
-            </thead>
-            <tbody>
-                {currencies.map(c => <Currency
-                    name={c.name}
-                    buyingPrice={c.buyingPrice}
-                    sellingPrice={c.sellingPrice} />
-                )}
-            </tbody>
-        </table>
+        <TableContainer component={Paper}>
+            <Table>
+                <TableHead>
+                    <TableCell>ISO Name</TableCell>
+                    <TableCell>Buying Price</TableCell>
+                    <TableCell>Selling Price</TableCell>
+                </TableHead>
+                <TableBody>
+                    {currencies.map(c => <Currency
+                        name={c.name}
+                        buyingPrice={c.buyingPrice}
+                        sellingPrice={c.sellingPrice} />
+                    )}
+                </TableBody>
+            </Table>
+        </TableContainer>
     );
 }
 
