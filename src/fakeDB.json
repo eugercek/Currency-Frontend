@@ -1,0 +1,29 @@
+{
+    "currencies": [
+        {
+            "name": "USD",
+            "buyingPrice": 8.46,
+            "sellingPrice": 8.48
+        },
+        {
+            "name": "AUD",
+            "buyingPrice": 6.1976,
+            "sellingPrice":6.238 
+        },
+        {
+            "name": "EUR",
+            "buyingPrice": 9.9762,
+            "sellingPrice":9.9941
+        },
+        {
+            "name": "GBP",
+            "buyingPrice": 11.7146,
+            "sellingPrice": 11.7757
+        },
+        {
+            "name": "CHF",
+            "buyingPrice": 9.2397,
+            "sellingPrice": 9.2991
+        }
+    ]
+}

@@ -3,7 +3,6 @@ import { Table, TableContainer, TableHead,  TableCell, TableBody} from "@materia
 import Paper from "@material-ui/core/Paper";
 
 const CurrencyTable = ({ currencies }) => {
-    // TODO Look at HTML 5 Table API
     return (
         <TableContainer component={Paper}>
             <Table>
