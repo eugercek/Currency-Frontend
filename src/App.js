@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import CurrencyTable from './CurrencyTable';
+import CurrencyTable from './components/CurrencyTable';
 import { Alert } from '@material-ui/lab';
-import { Typography, TextField, Select, MenuItem } from '@material-ui/core';
+import { Typography} from '@material-ui/core';
+import Converter from './components/Converter';
 
 function App() {
   const [currencies, setCurrencies] = useState(null);
@@ -21,21 +22,7 @@ function App() {
         <Alert severity="error">Coudn't fetch data</Alert>}
       {currencies && <CurrencyTable currencies={currencies} />}
       <span>&nbsp;&nbsp;</span>
-      <form noValidate autoComplete="off" align="center">
-        <Select >
-          {currencies && currencies.map((c) => <MenuItem key={c.name}>{c.name}</MenuItem>)}
-        </Select>
-
-        <TextField
-          label="Enter amount"
-          variant="outlined"
-          defaultValue="0"
-        />
-        <Select >
-          {currencies && currencies.map((c) => <MenuItem key={c.name}>{c.name}</MenuItem>)}
-        </Select>
-      </form>
-
+      {currencies && <Converter currencySet={currencies.map(c => c.name)}/>}
     </div>
   );
 
