@@ -15,9 +15,10 @@ function App() {
 
   return (
     <div className="App">
-      {fetchError &&
-        <Alert severity="error">Coudn't fetch data</Alert>}
+      {fetchError && 
+      <Alert severity="error">Coudn't fetch data</Alert>}
       {currencies && <CurrencyTable currencies={currencies} />}
+      
     </div>
   );
 

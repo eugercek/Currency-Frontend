@@ -1,11 +1,11 @@
 import Currency from "./Currency";
-import { Table, TableContainer, TableHead,  TableCell, TableBody} from "@material-ui/core";
+import { Table, TableContainer, TableHead, TableCell, TableBody } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 
 const CurrencyTable = ({ currencies }) => {
     return (
-        <TableContainer component={Paper}>
-            <Table>
+        <TableContainer component={Paper} style={{width: "60vh", margin: "auto" }}>
+            <Table >
                 <TableHead>
                     <TableCell>ISO Name</TableCell>
                     <TableCell>Buying Price</TableCell>
