@@ -13,7 +13,7 @@ const Currency = ({ name, buyingPrice, sellingPrice }) => {
 
 export default Currency;
 
-Currency.PropTypes = {
+Currency.propTypes = {
   name: PropTypes.string,
   buyingPrice: PropTypes.number,
   sellingPrice: PropTypes.number,

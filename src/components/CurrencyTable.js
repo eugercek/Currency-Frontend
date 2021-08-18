@@ -34,6 +34,6 @@ const CurrencyTable = ({ currencies }) => {
 
 export default CurrencyTable;
 
-CurrencyTable.PropTypes = {
+CurrencyTable.propTypes = {
   currencies: PropTypes.arrayOf(Currency.PropTypes),
 };

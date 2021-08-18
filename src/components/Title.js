@@ -1,4 +1,5 @@
 import Typography from "@material-ui/core/Typography";
+import PropTypes from "prop-types";
 
 const Title = ({ name }) => {
   return (
@@ -9,3 +10,7 @@ const Title = ({ name }) => {
 };
 
 export default Title;
+
+Title.propTypes = {
+  name: PropTypes.string,
+};
