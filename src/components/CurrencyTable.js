@@ -7,6 +7,7 @@ import {
   TableBody,
 } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
+import PropTypes from "prop-types";
 
 const CurrencyTable = ({ currencies }) => {
   return (
@@ -32,3 +33,7 @@ const CurrencyTable = ({ currencies }) => {
 };
 
 export default CurrencyTable;
+
+CurrencyTable.PropTypes = {
+  currencies: PropTypes.arrayOf(Currency.PropTypes),
+};
