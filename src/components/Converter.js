@@ -12,7 +12,6 @@ const Converter = ({ currencyNames }) => {
 };
 
 const CurrencySelect = ({ currencyNames }) => {
-  console.log(currencyNames.map((c) => c + "foo"));
   return (
     <Select>
       {currencyNames.map((n) => (
