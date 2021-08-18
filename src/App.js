@@ -12,8 +12,7 @@ function App() {
     fetch("http://localhost:3001/currencies")
       .then((res) => res.json())
       .then((data) => setCurrencies(data))
-      // eslint-disable-next-line no-unused-vars
-      .catch((err) => setFetchError(true));
+      .catch(() => setFetchError(true));
   }, []);
 
   return (

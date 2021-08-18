@@ -6,7 +6,7 @@ import Page from "../components/Page";
 const ConvertorRoute = ({ currencies }) => {
   return (
     <Page title="Currency Convertor">
-      <Converter currencyNames={currencies.map((c) => c.name)} />
+      <Converter currencies={currencies} />
     </Page>
   );
 };

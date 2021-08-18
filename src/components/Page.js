@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 
 const Page = (props) => {
-  console.log(props.title);
   const title = props.title;
   const children = props.children;
   return (
