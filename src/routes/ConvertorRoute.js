@@ -1,7 +1,9 @@
 import Converter from "../components/Converter";
 import Title from "../components/Title";
+import PropTypes from "prop-types";
+import Currency from "../components/Currency";
 
-const ConvertorRoute = (currencies) => {
+const ConvertorRoute = ({ currencies }) => {
   return (
     <div className="ConvertorRoute">
       <Title title="Currency Convertor" />
@@ -11,3 +13,7 @@ const ConvertorRoute = (currencies) => {
 };
 
 export default ConvertorRoute;
+
+ConvertorRoute.propTypes = {
+  currencies: PropTypes.arrayOf(Currency.PropTypes),
+};

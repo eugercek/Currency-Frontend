@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 //import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CurrencyTableRoute from "./routes/CurrencyTableRoute";
 import ErrorRoute from "./routes/ErrorRoute";
-// import ConvertorRoute from "./components/ConvertorRoute";
+import ConvertorRoute from "./routes/ConvertorRoute";
 
 function App() {
   const [currencies, setCurrencies] = useState(null);
@@ -18,12 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* {currencies ? (
-        <CurrencyTableRoute currencies={currencies} />
-      ) : (
-        <ErrorRoute />
-      )} */}
       {currencies && <CurrencyTableRoute currencies={currencies} />}
+      {currencies && <ConvertorRoute currencies={currencies} />}
       {fetchError && <ErrorRoute />}
     </div>
   );
