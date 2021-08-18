@@ -1,7 +1,6 @@
 import { TextField, Select, MenuItem } from "@material-ui/core";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
-import { useState } from "react";
 import Currency from "./Currency";
 
 const ConverterUnit = ({
@@ -10,14 +9,19 @@ const ConverterUnit = ({
   setValue,
   selectValue,
   setSelectValue,
+  ratio,
+  setOthersValue,
 }) => {
-  const currencyNames = currencies.map((c) => c.name);
   return (
     <>
       <Grid item xs={3}>
         <Select
-          onChange={(e) => setSelectValue(e.target.value)}
+          onChange={(e) => {
+            console.log("Select : " + e.target.value);
+            setSelectValue(e.target.value);
+          }}
           value={selectValue}
+          defaultValue={currencies[0].buyingPrice}
         >
           {currencies.map((currency) => (
             <MenuItem value={currency.buyingPrice}>{currency.name}</MenuItem>
@@ -27,7 +31,12 @@ const ConverterUnit = ({
       <Grid item xs={9}>
         <TextField
           variant="filled"
-          onChange={(e) => console.log(e.target.value)}
+          value={value}
+          onChange={(e) => {
+            console.log("Text : " + e.target.value);
+            setValue(parseFloat(e.target.value));
+            setOthersValue(value * ratio);
+          }}
           type="number"
         />
       </Grid>
@@ -41,6 +50,8 @@ ConverterUnit.propTypes = {
   setValue: PropTypes.func,
   selectValue: PropTypes.number,
   setSelectValue: PropTypes.func,
+  ratio: PropTypes.number,
+  setOthersValue: PropTypes.func,
 };
 
 export default ConverterUnit;

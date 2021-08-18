@@ -1,4 +1,3 @@
-import { TextField, Select, MenuItem } from "@material-ui/core";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
@@ -7,53 +6,10 @@ import Currency from "./Currency";
 import ConverterUnit from "../components/ConverterUnit";
 
 const Converter = ({ currencies }) => {
-  const currencyNames = currencies.map((c) => c.name);
-
   const [valA, setValA] = useState(0);
   const [valB, setValB] = useState(0);
-  const [selA, setSelA] = useState(currencyNames[0]);
-  const [selB, setSelB] = useState(currencyNames[1]);
-
-  const CurrencySelect = ({ fn, value }) => {
-    return (
-      <Select onChange={(e) => fn(e.target.value)} value={value}>
-        {currencyNames.map((currency) => (
-          <CurrencyMenuItem currency={currency} />
-        ))}
-      </Select>
-    );
-  };
-
-  const CurrencyMenuItem = ({ currency }) => {
-    return <MenuItem value={currency.buyingPrice}>{currency.name}</MenuItem>;
-  };
-
-  const CurrencyTextField = ({ fn }) => {
-    return (
-      <TextField
-        variant="filled"
-        onChange={(e) => fn(e.target.value)}
-        type="number"
-      />
-    );
-  };
-
-  Converter.propTypes = {
-    currencies: PropTypes.arrayOf(Currency.propTypes),
-  };
-
-  CurrencySelect.propTypes = {
-    fn: PropTypes.func,
-    value: PropTypes.string,
-  };
-
-  CurrencyMenuItem.propTypes = {
-    currency: Currency.propTypes,
-  };
-
-  CurrencyTextField.propTypes = {
-    fn: PropTypes.func,
-  };
+  const [selA, setSelA] = useState(1);
+  const [selB, setSelB] = useState(1);
 
   return (
     <Container maxWidth="xs">
@@ -70,6 +26,8 @@ const Converter = ({ currencies }) => {
             setValue={setValA}
             selectValue={selA}
             setSelectValue={setSelA}
+            ratio={valA / valB}
+            setOthersValue={setValB}
           />
           <ConverterUnit
             currencies={currencies}
@@ -77,10 +35,17 @@ const Converter = ({ currencies }) => {
             setValue={setValB}
             selectValue={selB}
             setSelectValue={setSelB}
+            ratio={selB / selA}
+            setOthersValue={setValA}
           />
         </Grid>
       </form>
     </Container>
   );
 };
+
+Converter.propTypes = {
+  currencies: PropTypes.arrayOf(Currency.propTypes),
+};
+
 export default Converter;
