@@ -1,14 +1,13 @@
 import Converter from "../components/Converter";
-import Title from "../components/Title";
 import PropTypes from "prop-types";
 import Currency from "../components/Currency";
+import Page from "../components/Page";
 
 const ConvertorRoute = ({ currencies }) => {
   return (
-    <div className="ConvertorRoute">
-      <Title title="Currency Convertor" />
+    <Page title="Currency Convertor">
       <Converter currencyNames={currencies.map((c) => c.name)} />
-    </div>
+    </Page>
   );
 };
 

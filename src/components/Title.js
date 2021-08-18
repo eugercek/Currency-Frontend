@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Title = ({ title }) => {
   return (
-    <Typography variant="h2" align="center" gutterBottom>
+    <Typography variant="h2" align="center" style={{ margin: 50 }}>
       {title}
     </Typography>
   );
