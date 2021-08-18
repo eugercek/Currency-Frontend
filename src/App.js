@@ -22,7 +22,7 @@ function App() {
         <Alert severity="error">Coudn't fetch data</Alert>}
       {currencies && <CurrencyTable currencies={currencies} />}
       <span>&nbsp;&nbsp;</span>
-      {currencies && <Converter currencySet={currencies.map(c => c.name)}/>}
+      {currencies && <Converter currencyNames={currencies.map(c => c.name)}/>}
     </div>
   );
 

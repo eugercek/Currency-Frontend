@@ -4,7 +4,7 @@ import Paper from "@material-ui/core/Paper";
 
 const CurrencyTable = ({ currencies }) => {
     return (
-        <TableContainer component={Paper} style={{width: "60vh", margin: "auto" }}>
+        <TableContainer component={Paper} style={{width: "60vw", margin: "auto" }}>
             <Table >
                 <TableHead>
                     <TableCell>ISO Name</TableCell>
