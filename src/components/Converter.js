@@ -2,14 +2,13 @@ import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import { useState } from "react";
-import Currency from "./Currency";
 import ConverterUnit from "../components/ConverterUnit";
 
 const Converter = ({ currencies }) => {
   const [valA, setValA] = useState(0);
   const [valB, setValB] = useState(0);
-  const [selA, setSelA] = useState(1);
-  const [selB, setSelB] = useState(1);
+  const [selA, setSelA] = useState(currencies[0].buyingPrice);
+  const [selB, setSelB] = useState(currencies[1].buyingPrice);
 
   return (
     <Container maxWidth="xs">
@@ -45,7 +44,7 @@ const Converter = ({ currencies }) => {
 };
 
 Converter.propTypes = {
-  currencies: PropTypes.arrayOf(Currency.propTypes),
+  currencies: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Converter;

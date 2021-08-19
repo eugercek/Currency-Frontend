@@ -1,6 +1,5 @@
 import Converter from "../components/Converter";
 import PropTypes from "prop-types";
-import Currency from "../components/Currency";
 import Page from "../components/Page";
 
 const ConvertorRoute = ({ currencies }) => {
@@ -14,5 +13,5 @@ const ConvertorRoute = ({ currencies }) => {
 export default ConvertorRoute;
 
 ConvertorRoute.propTypes = {
-  currencies: PropTypes.arrayOf(Currency.PropTypes),
+  currencies: PropTypes.arrayOf(PropTypes.object),
 };

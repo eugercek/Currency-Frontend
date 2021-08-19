@@ -1,7 +1,6 @@
 import { TextField, Select, MenuItem } from "@material-ui/core";
 import PropTypes from "prop-types";
 import Grid from "@material-ui/core/Grid";
-import Currency from "./Currency";
 
 const ConverterUnit = ({
   currencies,
@@ -45,7 +44,7 @@ const ConverterUnit = ({
 };
 
 ConverterUnit.propTypes = {
-  currencies: PropTypes.arrayOf(Currency.propTypes),
+  currencies: PropTypes.arrayOf(PropTypes.object),
   value: PropTypes.number,
   setValue: PropTypes.func,
   selectValue: PropTypes.number,

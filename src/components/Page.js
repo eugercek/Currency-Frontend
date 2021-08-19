@@ -9,7 +9,7 @@ const Page = (props) => {
     <Grid
       container
       direction="column"
-      justify="center"
+      justifyContent="center"
       style={{ minHeight: "60vh" }}
     >
       <Title title={title} />
