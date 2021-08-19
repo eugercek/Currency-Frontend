@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 const Currency = ({ name, buyingPrice, sellingPrice }) => {
   return (
     <TableRow>
-      <TableCell>{name}</TableCell>
-      <TableCell>{buyingPrice}</TableCell>
-      <TableCell>{sellingPrice}</TableCell>
+      <TableCell align="center">{name}</TableCell>
+      <TableCell align="center">{buyingPrice}</TableCell>
+      <TableCell align="center">{sellingPrice}</TableCell>
     </TableRow>
   );
 };

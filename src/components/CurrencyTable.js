@@ -14,9 +14,9 @@ const CurrencyTable = ({ currencies }) => {
     <TableContainer component={Paper} style={{ width: "60vw", margin: "auto" }}>
       <Table>
         <TableHead>
-          <TableCell>ISO Name</TableCell>
-          <TableCell>Buying Price</TableCell>
-          <TableCell>Selling Price</TableCell>
+          <TableCell align="center">ISO Name</TableCell>
+          <TableCell align="center">Buying Price (TL)</TableCell>
+          <TableCell align="center">Selling Price (TL)</TableCell>
         </TableHead>
         <TableBody>
           {currencies.map((c) => (
