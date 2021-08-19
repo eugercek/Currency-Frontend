@@ -25,7 +25,7 @@ const Converter = ({ currencies }) => {
             setValue={setValA}
             selectValue={selA}
             setSelectValue={setSelA}
-            ratio={valA / valB}
+            ratio={selA / selB}
             setOthersValue={setValB}
           />
           <ConverterUnit

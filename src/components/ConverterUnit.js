@@ -16,7 +16,6 @@ const ConverterUnit = ({
       <Grid item xs={3}>
         <Select
           onChange={(e) => {
-            console.log("Select : " + e.target.value);
             setSelectValue(e.target.value);
           }}
           value={selectValue}
@@ -32,9 +31,8 @@ const ConverterUnit = ({
           variant="filled"
           value={value}
           onChange={(e) => {
-            console.log("Text : " + e.target.value);
             setValue(parseFloat(e.target.value));
-            setOthersValue(value * ratio);
+            setOthersValue(e.target.value * ratio);
           }}
           type="number"
         />
