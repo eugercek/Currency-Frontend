@@ -24,6 +24,7 @@ const ConverterUnit = ({
           {currencies.map((currency) => (
             <MenuItem value={currency.buyingPrice}>{currency.name}</MenuItem>
           ))}
+          <MenuItem value={1}>TR</MenuItem>
         </Select>
       </Grid>
       <Grid item xs={9}>
@@ -31,6 +32,8 @@ const ConverterUnit = ({
           variant="filled"
           value={value}
           onChange={(e) => {
+            // Haven't handled empty string
+            // But JS is flexible enough
             setValue(parseFloat(e.target.value));
             setOthersValue(e.target.value * ratio);
           }}

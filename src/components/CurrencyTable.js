@@ -15,8 +15,12 @@ const CurrencyTable = ({ currencies }) => {
       <Table>
         <TableHead>
           <TableCell align="center">ISO Name</TableCell>
-          <TableCell align="center">Buying Price (TL)</TableCell>
-          <TableCell align="center">Selling Price (TL)</TableCell>
+          <TableCell align="center">
+            Buying Price <sub> TL</sub>
+          </TableCell>
+          <TableCell align="center">
+            Selling Price <sub>TL</sub>
+          </TableCell>
         </TableHead>
         <TableBody>
           {currencies.map((c) => (
@@ -32,8 +36,8 @@ const CurrencyTable = ({ currencies }) => {
   );
 };
 
-export default CurrencyTable;
-
 CurrencyTable.propTypes = {
-  currencies: PropTypes.arrayOf(Currency.PropTypes),
+  currencies: PropTypes.arrayOf(PropTypes.object),
 };
+
+export default CurrencyTable;

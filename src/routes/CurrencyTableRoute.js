@@ -1,6 +1,6 @@
-import Currency from "../components/Currency";
 import CurrencyTable from "../components/CurrencyTable";
 import Page from "../components/Page";
+import PropTypes from "prop-types";
 
 const CurrencyTableRoute = ({ currencies }) => {
   return (
@@ -13,5 +13,5 @@ const CurrencyTableRoute = ({ currencies }) => {
 export default CurrencyTableRoute;
 
 CurrencyTableRoute.propTypes = {
-  currencies: Currency.protoType,
+  currencies: PropTypes.arrayOf(PropTypes.object),
 };
