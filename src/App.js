@@ -9,7 +9,8 @@ function App() {
   const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/currencies")
+    // fetch("http://localhost:3001/currencies")
+    fetch("http://localhost:5000/today/list")
       .then((res) => res.json())
       .then((data) => setCurrencies(data))
       .catch(() => setFetchError(true));
@@ -17,8 +18,8 @@ function App() {
 
   return (
     <div className="App">
-      {currencies && <CurrencyTableRoute currencies={currencies} />}
       {currencies && <ConvertorRoute currencies={currencies} />}
+      {currencies && <CurrencyTableRoute currencies={currencies} />}
       {fetchError && <ErrorRoute />}
     </div>
   );
