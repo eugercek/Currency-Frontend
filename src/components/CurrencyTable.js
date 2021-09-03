@@ -28,6 +28,7 @@ const CurrencyTable = ({ currencies }) => {
               name={c.name}
               buyingPrice={c.buyingPrice}
               sellingPrice={c.sellingPrice}
+              code={c.code}
             />
           ))}
         </TableBody>
