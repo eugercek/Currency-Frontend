@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CurrencyTableRoute from "./routes/CurrencyTableRoute";
 import ErrorRoute from "./routes/ErrorRoute";
-import ConvertorRoute from "./routes/ConvertorRoute";
+import ConverterRoute from "./routes/ConverterRoute";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Redirect } from "react-router";
@@ -31,14 +31,14 @@ function App() {
               Table
             </Link>
             <Link
-              to="/convertor"
+              to="/converter"
               style={{
                 textDecoration: "none",
                 marginLeft: 10,
                 color: "inherit",
               }}
             >
-              Convertor
+              Converter
             </Link>
           </Toolbar>
         </AppBar>
@@ -47,11 +47,11 @@ function App() {
             {fetchError && <ErrorRoute />}
             {currencies && <CurrencyTableRoute currencies={currencies} />}
           </Route>
-          <Route path="/convertor">
+          <Route path="/converter">
             {fetchError && <ErrorRoute />}
-            {currencies && <ConvertorRoute currencies={currencies} />}
+            {currencies && <ConverterRoute currencies={currencies} />}
           </Route>
-          <Redirect from="/" to="/convertor" />
+          <Redirect from="/" to="/converter" />
         </Switch>
       </Router>
     </div>
