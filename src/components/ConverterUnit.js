@@ -13,8 +13,9 @@ const ConverterUnit = ({
 }) => {
   return (
     <>
-      <Grid item xs={3}>
+      <Grid item xs={6}>
         <Select
+          variant="filled"
           onChange={(e) => {
             setSelectValue(e.target.value);
           }}
@@ -27,7 +28,7 @@ const ConverterUnit = ({
           <MenuItem value={1}>TR</MenuItem>
         </Select>
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={6}>
         <TextField
           variant="filled"
           value={value}
