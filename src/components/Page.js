@@ -6,15 +6,12 @@ const Page = (props) => {
   const title = props.title;
   const children = props.children;
   return (
-    <Grid
-      container
-      direction="column"
-      justifyContent="center"
-      style={{ minHeight: "60vh" }}
-    >
-      <Title title={title} />
+    <>
+      <Grid container direction="column" style={{ minHeight: "30vh" }}>
+        <Title title={title} />
+      </Grid>
       {children}
-    </Grid>
+    </>
   );
 };
 

@@ -18,6 +18,7 @@ const ConverterUnit = ({
           variant="filled"
           onChange={(e) => {
             setSelectValue(e.target.value);
+            setOthersValue((ratio / selectValue) * e.target.value * value);
           }}
           value={selectValue}
           defaultValue={currencies[0].buyingPrice}
@@ -33,10 +34,13 @@ const ConverterUnit = ({
           variant="filled"
           value={value}
           onChange={(e) => {
-            // Haven't handled empty string
-            // But JS is flexible enough
-            setValue(parseFloat(e.target.value));
-            setOthersValue(e.target.value * ratio);
+            if (e.target.value == "") {
+              setValue("");
+              setOthersValue("");
+            } else {
+              setValue(parseFloat(e.target.value));
+              setOthersValue(e.target.value * ratio);
+            }
           }}
           type="number"
         />
